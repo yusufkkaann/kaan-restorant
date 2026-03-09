@@ -1,0 +1,135 @@
+:root {
+	--primary-color: #e63946; /* Vibrant Red */
+	--secondary-color: #f77f00; /* Energetic Orange */
+	--accent-color: #fcbf49; /* Warm Yellow */
+	--dark-color: #1d3557; /* Deep Navy */
+	--light-color: #f8f9fa;
+	--bg-gradient: linear-gradient(135deg, #e63946 0%, #f77f00 100%);
+	--card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	--hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+	font-family:
+		"Outfit",
+		"Inter",
+		system-ui,
+		-apple-system,
+		sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+	background-color: #fefefe;
+	color: var(--dark-color);
+}
+
+#root {
+	width: 100%;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-color);
+}
+
+/* Base Link */
+a {
+	text-decoration: none;
+	transition: var(--hover-transition);
+}
+
+/* Premium Button Styles */
+.btn-premium {
+	background: var(--bg-gradient);
+	border: none;
+	color: white;
+	padding: 10px 25px;
+	border-radius: 12px;
+	font-weight: 600;
+	transition: var(--hover-transition);
+	box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn-premium:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+	color: white;
+}
+
+.btn-secondary-premium {
+	background: white;
+	border: 2px solid var(--primary-color);
+	color: var(--primary-color);
+	padding: 8px 20px;
+	border-radius: 12px;
+	font-weight: 600;
+	transition: var(--hover-transition);
+}
+
+.btn-secondary-premium:hover {
+	background: var(--primary-color);
+	color: white;
+}
+
+/* Card Improvements */
+.premium-card {
+	border: none;
+	border-radius: 20px;
+	box-shadow: var(--card-shadow);
+	transition: var(--hover-transition);
+	overflow: hidden;
+}
+
+.premium-card:hover {
+	transform: translateY(-5px);
+}
+
+/* Table Design */
+.premium-table thead {
+	background-color: #fff;
+	border-bottom: 2px solid #eee;
+}
+
+.premium-table th {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	letter-spacing: 1px;
+	color: #666;
+	padding: 20px 15px;
+}
+
+.premium-table td {
+	padding: 20px 15px;
+	vertical-align: middle;
+	border-bottom: 1px solid #f8f9fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.5s ease-out forwards;
+}
