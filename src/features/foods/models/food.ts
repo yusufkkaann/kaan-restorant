@@ -1,5 +1,7 @@
 import type { DocumentData, QueryDocumentSnapshot } from "firebase/firestore"
 
+export const CATEGORIES = ["Tümü", "Çorba", "Ana Yemek", "Ara Sıcak", "Tatlı", "İçecek"]
+
 export interface Food {
 	id: string
 	name: string
@@ -13,3 +15,4 @@ export interface PaginatedFoods {
 	foods: Food[]
 	lastVisible: QueryDocumentSnapshot<DocumentData> | null
 }
+

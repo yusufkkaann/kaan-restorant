@@ -2,12 +2,14 @@ import { useState } from "react"
 import FoodTable from "./components/FoodTable"
 import FoodFormModal from "./components/FoodFormModal"
 import ConfirmModal from "../../components/ConfirmModal"
+import FoodFilters from "./components/FoodFilters"
 import { useFoods } from "../../features/foods/hooks/useFoods"
 import type { Food } from "../../features/foods/models/food"
 
 const FoodsPage = () => {
-	const { foods, loading, error, page, hasMore, nextPage, prevPage, addFood, updateFood, deleteFood } = useFoods(3)
+	const { foods, loading, error, page, hasMore, category, searchTerm, setCategory, setSearchTerm, nextPage, prevPage, addFood, updateFood, deleteFood } = useFoods(3)
 	const [isModalOpen, setIsModalOpen] = useState(false)
+
 	const [editingFood, setEditingFood] = useState<Food | null>(null)
 	const [deleteId, setDeleteId] = useState<string | null>(null)
 
@@ -64,7 +66,10 @@ const FoodsPage = () => {
 
 			{error && <div className="alert alert-danger border-0 shadow-sm mb-4">{error}</div>}
 
+			<FoodFilters category={category} searchTerm={searchTerm} setCategory={setCategory} setSearchTerm={setSearchTerm} />
+
 			<div className="row">
+
 				<div className="col-12">
 					<div className="premium-card bg-white">
 						<div className="card-body p-0 position-relative">
